@@ -1,0 +1,521 @@
+/* 
+
+*/
+
+/*  */
+
+/* default theme */
+.default { 
+    background-color: white;
+    --content-background: #ff808b;
+    --header-background: #f7e948;
+    --text-color: #000000;
+    --header-top: 0px;
+    --header-position: fixed;
+}
+
+/* reverse theme */
+.reverse { 
+    background-color: #ffffff;
+    --content-background: #f7e948;
+    --header-background: #ff808b;
+    --text-color: #000000;
+    --header-top: 0px;
+    --header-position: fixed;
+
+}
+
+/* dark theme */
+.dark {
+    background-color: #000000;
+    --content-background: #757575;
+    --header-background: #a3a3a3;
+    --text-color: #000000;
+    --header-position: fixed;
+    --header-bottom: 0px;
+}
+
+/* applies to all divs */
+* {
+    box-sizing: border-box;
+}
+
+/* Add Spongebob Font */
+@font-face { 
+    font-family: Spongebob; src: url('SpongeboyRegular-gx2n6.otf'); 
+}
+
+/* for body and html elements, include these 3 attributes listed */
+body, html {
+height: 100%;
+margin: 0;
+color: var(--text-color)
+}
+
+/* format for div elements */
+div {
+    margin: 0px;
+    background-color: var(--content-background);
+    color: var(--text-color);
+    font-family: Spongebob;
+}
+
+/* format for body div elements */
+body div {
+    padding: 10px;
+    background-position: center;
+    color: var(--text-color);
+    font-family: Spongebob;
+}
+
+/* format for img div elements */
+img div {
+    vertical-align: top;
+}
+
+/* design for random quote generate button */
+button { 
+    font-family: Spongebob; 
+    font-weight: 0; 
+    font-size: 50px; 
+    color: var(--header-color); 
+    background: linear-gradient(90deg, var(--header-background) 0%, var(--content-background) 100%); 
+    padding: 70px 350px; 
+    border: none; 
+    /* border radius to add curves to button */
+    border-radius: 54px 120px;
+}
+    
+button:hover{ 
+    transition : 300ms;
+    padding: 70px 350px; 
+    transform : translateY(-10px);
+    background: linear-gradient(90deg, var(--content-background) 0%, var(--header-background) 100%);
+    color: #ffffff;
+    border: none;
+}  
+
+.quote-text {
+    display: none;
+    color: black;
+    background-color: #ffffff;
+    text-shadow: 0 0 12px var(--content-background), 0 0 20px var(--header-background);
+    padding: 18px;
+    letter-spacing: 0px;
+    border: 5px solid rgb(0, 0, 0);
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    /* border radius to add curves to button */
+    border-radius: 54px 120px;
+    transition : 300ms;
+    transform: translateY(0);
+}
+
+.quote-speaker {
+    display: none;
+    color: rgb(255, 255, 255);
+    background-color: #000000; 
+    text-shadow: 18px;
+    letter-spacing: 0px;
+    border: 5px solid rgb(255, 255, 255);
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    /* border radius to add curves to button */
+    border-radius: 27px 60px;
+    transition : 300ms;
+    transform: translateY(0);
+}
+
+/* changes text and background color depending on theme */
+.background-y-p {
+    margin: 0px;
+    background-color: var(--header-background);
+    color: var(--text-color);
+    font-family: Spongebob;
+}
+
+.default .def-hide, .reverse .rev-hide, .dark .dark-hide {
+    display: none;
+}
+
+/* START - format to make table for character slideshow and description */
+    /* format for column */
+.column {
+    float: left;
+    width: 50%;
+    padding: 15px;
+}
+
+.dark .column {
+    float: left;
+    width: 600px;
+    padding: 25px;
+    zoom: 110%;
+}
+
+    /* format for row (clear floats between images) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* START - Code for Top Bar */
+    /* format for position */
+ul {
+    position: var(--header-position);
+    top: var(--header-top);
+    bottom: var(--header-bottom);
+    left: 0;
+    right: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--header-background);
+    z-index: 4;
+}
+    /* format for text in top bar */
+li {
+    float: left;
+}
+    /* format for anchors for text in top bar */
+li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-family: Spongebob;
+}
+    /* format for mouse hover over top bar. changes background of option to white */
+li a:hover {
+    background-color: rgb(255, 255, 255);
+}
+/* END - Code for top bar */
+
+
+/*  */
+.title {
+    text-align: center;
+}
+
+/* formats text for text inside top picture for each section */
+.main_title {
+    text-align: center;
+    padding: 1px;
+    font-size: xx-large;
+    font-family: Spongebob;
+}
+
+/* line height for text in .\characters\index.html for hover over image */
+.character-des {
+    line-height: 2.8;
+}
+
+/* adds empyt space in .\characters\index.html to set both pictures per character at the same height */
+.empty11 {
+    background-color: none;
+    padding: 11px;
+}
+
+/* id for centering images */
+#center_img {
+    text-align: center
+}
+
+/* id for theme selector format */
+#theme-selector {
+    position: fixed;
+    margin: 5px;
+    right: 0px;
+    top: var(--theme-top);
+    padding: 5px;
+    width: 100px;
+    z-index: 5;
+}
+
+/* id for tab for sources */
+#tab {
+    tab-size: 1;
+}
+/*-----------------------------------START - IMAGE CONTAINER FOR BODY----------------------*/
+
+/* position images in format below. images differ in "background-image" path */
+.home-img-1, .def-home-img-2, .rev-home-img-2, .dark-home-img-2, .char-img-1, .char-img-2, .clips-img-1, .about-img-1, .about-img-2, .char-img-1, .clips-img-1, .quote-img-1, .quote-img-2 {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-img-1 {
+    background-image: url("./media/home-img-1.jpg");
+    height: 100%;
+}
+
+.home-img-1-caption {
+    position: absolute;
+    background: none;
+    left: 0;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.home-img-1-caption span.border {
+    color: var(--content-background);
+    text-shadow: 0 0 12px var(--header-background), 0 0 20px #ffffff;
+    padding: 18px;
+    font-size: 150px;
+    letter-spacing: 0px;
+}
+
+.def-home-img-2 {
+    background-image: url("./media/def-home-img-2.jpg");
+    height: 100%;
+}
+
+.rev-home-img-2 {
+    background-image: url("./media/rev-home-img-2.jpg");
+    height: 100%;
+}
+
+.dark-home-img-2 {
+    background-image: url("./media/dark-home-img-2.jpg");
+    height: 100%;
+}
+
+.home-img-2-caption {
+    position: absolute;
+    background: none;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.home-img-2-caption span.border {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 40px "Lato", sans-serif;
+    color: white;
+    text-shadow: 0 0 20px #000000, 0 0 12px var(--content-background);
+    padding: 30px;
+}
+
+.about-img-1 {
+    background-image: url("./media/about-img-1.jpg");
+    height: 100%;
+}
+
+.about-img-1-caption {
+    position: absolute;
+    background: none;
+    left: 0;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.about-img-1-caption span.border {
+    color: var(--content-background);
+    text-shadow: 0 0 12px var(--header-background), 0 0 20px #ffffff;
+    padding: 18px;
+    font-size: 150px;
+    letter-spacing: 0px;
+}
+
+.about-img-2 {
+    background-image: url("./media/about-img-2.jpg");
+    height: 100%;
+}
+
+.about-img-2-caption {
+    position: absolute;
+    background: none;
+    left: 0;
+    top: 16%;
+    width: 100%;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.about-img-2-caption span.border {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 31px "Lato", sans-serif;
+    color: white;
+    text-shadow: 0 0 20px #000000, 0 0 12px var(--content-background);
+    padding: 30px;
+}
+
+.char-img-1 {
+    background-image: url("./media/char-img-1.jpg");
+    height: 100%;
+}
+
+.char-img-1-caption {
+    position: absolute;
+    background: none;
+    left: 0;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+}
+    
+.char-img-1-caption span.border {
+    color: var(--content-background);
+    text-shadow: 0 0 12px var(--header-background), 0 0 20px #ffffff;
+    padding: 18px;
+    font-size: 100px;
+    letter-spacing: 0px;
+}
+
+.clips-img-1 {
+    background-image: url("./media/clips-img-1.jpg");
+    height: 100%;
+}
+
+.clips-img-1-caption {
+    position: absolute;
+    background: none;
+    left: 0;
+    top: 28%;
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+}
+    
+.clips-img-1-caption span.border {
+    color: var(--content-background);
+    text-shadow: 0 0 12px var(--header-background), 0 0 20px #ffffff;
+    padding: 18px;
+    font-size: 90px;
+    letter-spacing: 0px;
+}
+
+.quote-img-1 {
+    background-image: url("./media/quote-img-1.jpg");
+    height: 100%;
+}
+
+.quote-img-1-caption {
+    position: absolute;
+    background: none;
+    left: 0;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.quote-img-1-caption span.border {
+    color: var(--content-background);
+    text-shadow: 0 0 12px var(--header-background), 0 0 20px #ffffff;
+    padding: 40px;
+    font-size: 120px;
+    letter-spacing: 0px;
+}
+
+.quote-img-2 {
+    background-image: url("./media/quote-img-2.jpg");
+    height: 100%;
+}
+
+.quote-img-2-caption {
+    position: absolute;
+    background: none;
+    top: 24%;
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.quote-img-2-caption span.border {
+    letter-spacing: 5px;
+    font-size: 20px;
+    text-shadow: 0 0 20px #000000, 0 0 12px var(--content-background);
+}
+
+/*-----------------------------------END - IMAGE CONTAINER FOR BODY----------------------*/
+
+/* -------------------------------START - SLIDESHOW--------------------------------------- */
+/* format for slider frame */
+.slider-frame{
+    overflow: hidden;
+    height: 560px;
+    width: 560px;
+    margin-left: 80px;
+    margin-top: 0px;
+    z-index: 2;
+    opacity: 100%;
+    background: none;
+}
+
+/*---------- SLIDE ANIMATION --------------*/
+
+/* animation speed */
+@keyframes slide_animation {
+    0% {left:0px;}
+    10% {left:0px;}
+    20% {left:1200px;}
+    30% {left:1200px;}
+    40% {left: 2400px;}
+    50% {left: 2400px;}
+    60% {left: 1200px;}
+    70% {left: 1200px;}
+    80% {left: 0px;}
+    90% {left: 0px;}
+    100% {left:0px;}
+}
+
+/* animation speed */
+@-webkit-keyframes slide_animation {
+    0% {left:0px;}
+    10% {left:0px;}
+    20% {left:1200px;}
+    30% {left:1200px;}
+    40% {left: 2400px;}
+    50% {left: 2400px;}
+    60% {left: 1200px;}
+    70% {left: 1200px;}
+    80% {left: 0px;}
+    90% {left: 0px;}
+    100% {left:0px;}
+}
+
+/* animation size and timing */
+.slide-images {
+    width: 6400px;
+    height: 560px;
+    margin: 0 0 0 -2400px;
+    position: relative;
+    -webkit-animation-name: slide_animation;
+    animation-name: slide_animation;
+    -webkit-animation-duration: 33s;
+    animation-duration: 33s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+    z-index: 2;
+    background: none;
+}
+
+/* size and position of iamges inside image container */
+.img-container {
+    height: 560px;
+    width: 1200px;
+    position: relative;
+    float: left;
+    z-index: 2;
+    opacity: 100%;
+    background: none;
+}
+
+/* -------------------------------------- END - SLIDESHOW -------------------------------*/

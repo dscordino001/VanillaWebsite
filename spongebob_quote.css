@@ -1,0 +1,223 @@
+/* default theme */
+.default { 
+    background-color: white;
+    --content-background: #ff808b;
+    --header-background: #f7e948;
+    --text-color: #000000;
+    --header-top: 0px;
+    --header-position: fixed;
+}
+
+/* reverse theme */
+.reverse { 
+    background-color: #ffffff;
+    --content-background: #f7e948;
+    --header-background: #ff808b;
+    --text-color: #000000;
+    --header-top: 0px;
+    --header-position: fixed;
+
+}
+
+/* dark theme */
+.dark {
+    background-color: #000000;
+    --content-background: #757575;
+    --header-background: #a3a3a3;
+    --text-color: #000000;
+    --header-position: fixed;
+    --header-bottom: 0px;
+}
+
+/* START - Code for Top Bar */
+    /* format for position */
+    ul {
+        position: var(--header-position);
+        top: var(--header-top);
+        bottom: var(--header-bottom);
+        left: 0;
+        right: 0;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: var(--header-background);
+        z-index: 4;
+    }
+        /* format for text in top bar */
+    li {
+        float: left;
+    }
+        /* format for anchors for text in top bar */
+    li a {
+        display: block;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 16px 16px;
+        text-decoration: none;
+        font-family: Spongebob;
+    }
+        /* format for mouse hover over top bar. changes background of option to white */
+    li a:hover {
+        background-color: rgb(255, 255, 255);
+    }
+    /* END - Code for top bar */
+
+/* applies to all divs */
+* {
+    box-sizing: border-box;
+}
+
+/* Add Spongebob Font */
+@font-face { 
+    font-family: Spongebob; src: url('SpongeboyRegular-gx2n6.otf'); 
+}
+
+/* for body and html elements, include these 3 attributes listed */
+body, html {
+height: 100%;
+margin: 0;
+color: var(--text-color)
+}
+
+/* format for div elements */
+div {
+    margin: 0px;
+    background-color: var(--content-background);
+    color: var(--text-color);
+    font-family: Spongebob;
+}
+
+/* format for body div elements */
+body div {
+    padding: 10px;
+    background-position: center;
+    color: var(--text-color);
+    font-family: Spongebob;
+}
+
+/* format for img div elements */
+img div {
+    vertical-align: top;
+}
+
+/* design for random quote generate button */
+button { 
+    font-family: Spongebob; 
+    font-weight: 0; 
+    font-size: 50px; 
+    color: var(--header-color); 
+    background: linear-gradient(90deg, var(--header-background) 0%, var(--content-background) 100%); 
+    padding: 70px 350px; 
+    border: none; 
+    /* border radius to add curves to button */
+    border-radius: 54px 120px;
+}
+    
+button:hover{ 
+    transition : 300ms;
+    padding: 70px 350px; 
+    transform : translateY(-10px);
+    background: linear-gradient(90deg, var(--content-background) 0%, var(--header-background) 100%);
+    color: #ffffff;
+    border: none;
+}  
+
+.quote-text {
+    display: none;
+    color: black;
+    background-color: #ffffff;
+    text-shadow: 0 0 12px var(--content-background), 0 0 20px var(--header-background);
+    padding: 18px;
+    letter-spacing: 0px;
+    border: 5px solid rgb(0, 0, 0);
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    /* border radius to add curves to button */
+    border-radius: 54px 120px;
+    transition : 300ms;
+    transform: translateY(0);
+}
+
+.quote-speaker {
+    display: none;
+    color: rgb(255, 255, 255);
+    background-color: #000000; 
+    text-shadow: 18px;
+    letter-spacing: 0px;
+    border: 5px solid rgb(255, 255, 255);
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    /* border radius to add curves to button */
+    border-radius: 27px 60px;
+    transition : 300ms;
+    transform: translateY(0);
+}
+
+.default .def-hide, .reverse .rev-hide, .dark .dark-hide {
+    display: none;
+}
+
+/* id for theme selector format */
+#theme-selector {
+    position: fixed;
+    margin: 5px;
+    right: 0px;
+    top: var(--theme-top);
+    padding: 5px;
+    width: 100px;
+    z-index: 5;
+}
+
+/*-----------------------------------START - IMAGE CONTAINER FOR BODY----------------------*/
+
+/* position images in format below. images differ in "background-image" path */
+.quote-img-1, .quote-img-2 {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.quote-img-1 {
+    background-image: url("./media/quote-img-1.jpg");
+    height: 100%;
+}
+
+.quote-img-1-caption {
+    position: absolute;
+    background: none;
+    left: 0;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.quote-img-1-caption span.border {
+    color: var(--content-background);
+    text-shadow: 0 0 12px var(--header-background), 0 0 20px #ffffff;
+    padding: 40px;
+    font-size: 120px;
+    letter-spacing: 0px;
+}
+
+.quote-img-2 {
+    background-image: url("./media/quote-img-2.jpg");
+    height: 100%;
+}
+
+.quote-img-2-caption {
+    position: absolute;
+    background: none;
+    top: 24%;
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.quote-img-2-caption span.border {
+    letter-spacing: 5px;
+    font-size: 20px;
+    text-shadow: 0 0 20px #000000, 0 0 12px var(--content-background);
+}
+
+/*-----------------------------------END - IMAGE CONTAINER FOR BODY----------------------*/

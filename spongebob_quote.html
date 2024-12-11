@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--   -->
+<html>
+    <!--  START - title, sytle sheet, java, and theme selector display -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SpongeBob Squarepants</title>
+        <link href="spongebob_quote.css" rel="stylesheet"/>
+        <script src="genquote.js"></script>
+
+        <select id="theme-selector">
+            <option name="default">default</option>
+            <option name="reverse">reverse</option>
+            <option name="dark">dark</option>
+        </select>
+    <!-- END - title, sytle sheet, java, and theme selector display --> 
+    </head>
+    <!-- START - links for different pages in top bar -->
+    <ul>
+        <li>
+            <a 
+                href=".\index.html"><strong>Home</strong>
+            </a>
+        </li>
+        <li>
+            <a 
+                href=".\spongebob_about.html"><strong>About the Show</strong>
+            </a>
+        </li>
+        <li>
+            <a 
+                href=".\characters\index.html"><strong>Characters</strong>
+            </a>
+        </li>
+        <li>
+            <a 
+                href=".\spongebob_bestclips.html"><strong>Best Clips</strong>
+            </a>
+        </li>
+        <li>
+            <a 
+                href=".\spongebob_quote.html"><strong>Best Quotes</strong>
+            </a>
+        </li>
+    </ul>
+    <!-- END - links for different pages in top bar -->
+
+
+    <body data-new-gr-c-s-check-loaded="14.1095.0" data-gr-ext-installed="">
+        <!-- START FULL SCREE IMAGE -->
+        <!-- using the quote-img-1 class -->
+        <div class="quote-img-1">
+            <!-- using the caption format inside of quote-img-1 -->
+            <div class="quote-img-1-caption">
+                <!-- add the text "SpongeBob Squarepants" with one line for each word-->
+                <span class="border">Best Quotes from the Show!</span><br>
+            </div>
+        </div>
+
+        <div class="quote-img-2">
+            <div class="quote-img-2-caption">
+                <span class="border">
+                    <button id="genquote">Generate Quote</button>
+                    <blockquote>
+                        <div class='quote-text' id="quotation"></div>
+                        <div class='quote-speaker' id="speaker"></div>
+                    </blockquote>
+                </span>
+            </div>
+        </div>
+
+    </body>
+</html>
